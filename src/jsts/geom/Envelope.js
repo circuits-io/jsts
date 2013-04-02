@@ -625,13 +625,13 @@ jsts.geom.Envelope.prototype.containsValues = function(x, y) {
  *
  * Will call appropriate contains* depending on arguments.
  */
-jsts.geom.Envelope.prototype.covers = function() {
+jsts.geom.Envelope.prototype.covers = function(p) {
   if (p instanceof jsts.geom.Envelope) {
-    this.coversEnvelope(arguments[0]);
+    return this.coversEnvelope(arguments[0]);
   } else if (p instanceof jsts.geom.Coordinate) {
-    this.coversCoordinate(arguments[0]);
+    return this.coversCoordinate(arguments[0]);
   } else {
-    this.coversValues(arguments[0], arguments[1]);
+    return this.coversValues(arguments[0], arguments[1]);
   }
 };
 
