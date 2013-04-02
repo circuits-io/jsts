@@ -1,0 +1,19 @@
+#!/bin/sh
+<<<<<<< HEAD
+jsbuild full.cfg -v -u -o ../lib -j jsts.js
+tar -cvf jsts-0.13.1.tar ../src ../doc ../lib ../examples ../src ../license.txt ../authors.txt ../ChangeLog ../README.md
+rm jsts-0.13.1.tar.gz
+gzip -9 jsts-0.13.1.tar
+=======
+jsbuild full.cfg -v -o ../lib -j jsts.js
+tar -cvf jsts-0.13.2.tar ../src ../doc ../lib ../examples ../src ../license.txt ../authors.txt ../ChangeLog ../README.md
+rm jsts-0.13.2.tar.gz
+gzip -9 jsts-0.13.2.tar
+>>>>>>> f6c7fdd93a27d569547dd06f78217d0a508f4dd9
+mkdir tmp
+cd tmp
+tar xvfz ../jsts-0.13.2.tar.gz
+rm ../jsts-0.13.2.zip
+zip -r -9 ../jsts-0.13.2.zip *
+cd ..
+rm tmp -rf
